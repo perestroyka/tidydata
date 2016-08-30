@@ -1,5 +1,6 @@
 ## Tidying accelerometers data script
 ## all file manipulations are done in "./dataset/" directory
+## resulting tidy dataset will be written to ./dataset/tidy.txt
 
 library(data.table)
 library(dplyr)
@@ -21,8 +22,6 @@ file_names=c(
 
 #removing extensions for file names, will be used for generating variable names
 var_names <- gsub(".txt","",file_names) 
-
-setwd("C:/Users/Sergey/Documents/R") # To comment!!!!
 
 wd <- getwd()
 
@@ -65,6 +64,7 @@ X_joined$Subject <- factor(X_joined$Subject,levels=unique(X_joined$Subject),labe
 #giving descriptive names to variables
 names(X_joined) <- c(var_names_useful,"Activity","Subject")
 
+#making new data set with averages of std() and mean () variables grouped by Subject and Activity
 by_activity <- X_joined %>% 
         select(-Subject) %>%
         group_by(Activity) %>%
@@ -74,8 +74,9 @@ by_subject <- X_joined %>%
         select(-Activity) %>%
         group_by(Subject) %>%
         summarize_all(mean)
- 
 by_subject <- rename(by_subject,Activity_or_Subject=Subject)
 tidy <- rbind(by_activity,by_subject)
-write.table(tidy,"tidy.txt",row.name=FALSE)
-#setwd(wd)
+
+write.table(tidy,"tidy.txt",row.name=FALSE) #writing tidy data set
+
+setwd(wd) #restoring working directory
