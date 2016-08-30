@@ -9,7 +9,7 @@ The goals is to do the following:
 - Appropriately label the data set with descriptive variable names.
 - From the data set in previous step, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-The script does the following: (please see comments in run_analysis.R for more details)
+The script does the following: (please see comments in run_analysis.R for more details)  
 1. If not present, creates "dataset" subdir in the working directory, making it the new working directory  
 2. Downloads and unpacks dataset (if it is not already downloaded)  
 3. Loads files   
