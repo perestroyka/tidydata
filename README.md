@@ -122,5 +122,5 @@ fBodyBodyAccJerkMag_mean
 fBodyBodyAccJerkMag_std 
 fBodyBodyGyroMag_mean 
 fBodyBodyGyroMag_std 
-fBodyBodyGyroJerkMag_mean 
+fBodyBodyGyroJerkMag_mean
 fBodyBodyGyroJerkMag_std
