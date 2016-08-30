@@ -9,7 +9,7 @@ library(tidyr)
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
 #hardcoding all the needed files from dataset
-file_names=c(    
+file_names=as.vector(c(    
         "activity_labels.txt",
         "features.txt",
         "subject_test.txt",
@@ -18,7 +18,7 @@ file_names=c(
         "X_train.txt",
         "y_test.txt",
         "y_train.txt"       
-        )
+        ))
 
 #removing extensions for file names, will be used for generating variable names
 var_names <- gsub(".txt","",file_names) 
@@ -31,7 +31,7 @@ if(!dir.exists("dataset")) dir.create("dataset")
 setwd("dataset")
 if(!file.exists("dataset.zip")) { 
         download.file(url,"dataset.zip") 
-        unzip("dataset.zip", files=file_names, junkpaths = TRUE,overwrite=FALSE)
+        unzip("dataset.zip", junkpaths = TRUE,overwrite=FALSE)
         } else {print("Dataset exists, no need to download")}
 
 # loading all files into corresponding variables, might be lengthy, so made progress output to improve UX :)
