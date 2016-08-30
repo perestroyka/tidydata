@@ -2,12 +2,12 @@ run_analysis.R - downloads and manipulates data in
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 dataset (originally obtained from: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-The goals of the script are:
-- Merges the training and the test sets to create one data set.
-- Extracts only the measurements on the mean and standard deviation for each measurement.
-- Uses descriptive activity names to name the activities in the data set
-- Appropriately labels the data set with descriptive variable names.
-- From the data set in previous step, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+The goals is to do the following:
+- Merge the training and the test sets to create one data set.
+- Extract only the measurements on the mean and standard deviation for each measurement.
+- Use descriptive activity names to name the activities in the data set
+- Appropriately label the data set with descriptive variable names.
+- From the data set in previous step, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 The script does the following: (please see comments in run_analysis.R for more details)
 1. If not present, creates "dataset" subdir in the working directory, making it the new working directory
