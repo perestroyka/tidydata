@@ -10,9 +10,9 @@ The goals is to do the following:
 - From the data set in previous step, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 The script does the following: (please see comments in run_analysis.R for more details)
-1. If not present, creates "dataset" subdir in the working directory, making it the new working directory
-2. Downloads and unpacks dataset (if it is not already downloaded)
-3. Loads files 
+1. If not present, creates "dataset" subdir in the working directory, making it the new working directory  
+2. Downloads and unpacks dataset (if it is not already downloaded)  
+3. Loads files   
 	"activity_labels.txt",
         "features.txt",
         "subject_test.txt",
@@ -22,14 +22,13 @@ The script does the following: (please see comments in run_analysis.R for more d
         "y_test.txt",
         "y_train.txt"       
 to the data.tables with corresponding names (omitting .txt)
-4. Collects column names containing means ("mean()") and standard deviation ("std()) values from "features", and corresponding column indices
-5. Makes column names more readable by removing parenthesizes and replacing dashes with underscores
-6. Reads test subject numbers and activities from corresponding "test" and "train" sets, converting them to factor variables
-7. Combines "train" and "test" datasets together, while adding subject numbers and activities names
-8. Cuts all the unnecessary columns, gives proper column names, giving us the final joined tidy dataset ("X_Joined")
-
-9. Makes summary table ("tidy") containing averages of all the means and standard deviation variables grouped by test subject and activity name
-10. Saves the summary table to "tidy.txt"
+4. Collects column names containing means ("mean()") and standard deviation ("std()) values from "features", and corresponding column indices  
+5. Makes column names more readable by removing parenthesizes and replacing dashes with underscores  
+6. Reads test subject numbers and activities from corresponding "test" and "train" sets, converting them to factor variables  
+7. Combines "train" and "test" datasets together, while adding subject numbers and activities names  
+8. Cuts all the unnecessary columns, gives proper column names, giving us the final joined tidy dataset ("X_Joined")  
+9. Makes summary table ("tidy") containing averages of all the means and standard deviation variables grouped by test subject and activity name  
+10. Saves the summary table to "tidy.txt"  
 
 
 tidy.txt contains:
